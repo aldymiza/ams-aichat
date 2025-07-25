@@ -1,0 +1,205 @@
+:root {
+    --bg-color: #121212;
+    --surface-color: #1e1e1e;
+    --primary-gold: #D4AF37;
+    --text-color: #E0E0E0;
+    --text-secondary: #a0a0a0;
+    --font-primary: 'Orbitron', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-secondary);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+#app-container {
+    width: 100%;
+    max-width: 700px;
+    height: 90vh;
+    max-height: 800px;
+    background-color: var(--surface-color);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--primary-gold);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.app-header {
+    padding: 20px;
+    background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+    border-bottom: 1px solid var(--primary-gold);
+    text-align: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.logo-placeholder {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-gold);
+    color: var(--bg-color);
+    font-family: var(--font-primary);
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.app-header h1 {
+    font-family: var(--font-primary);
+    color: var(--primary-gold);
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.tagline {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+#chat-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+#chat-box {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+#chat-box::-webkit-scrollbar-track {
+    background: var(--surface-color);
+}
+#chat-box::-webkit-scrollbar-thumb {
+    background-color: var(--primary-gold);
+    border-radius: 20px;
+    border: 3px solid var(--surface-color);
+}
+
+.chat-message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 18px;
+    line-height: 1.5;
+}
+
+.chat-message.user {
+    background-color: var(--primary-gold);
+    color: var(--bg-color);
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+.chat-message.bot {
+    background-color: #333;
+    color: var(--text-color);
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+#loading-indicator {
+    position: absolute;
+    bottom: 70px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#loading-indicator.hidden {
+    display: none;
+}
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(212, 175, 55, 0.3);
+    border-top-color: var(--primary-gold);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+#chat-form {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #333;
+    background-color: var(--surface-color);
+}
+
+#user-input {
+    flex-grow: 1;
+    border: 1px solid #444;
+    background-color: #333;
+    color: var(--text-color);
+    padding: 12px 15px;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#user-input:focus {
+    border-color: var(--primary-gold);
+}
+
+#send-btn {
+    background: var(--primary-gold);
+    border: none;
+    color: var(--bg-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+#send-btn:hover {
+    transform: scale(1.1);
+}
+
+.app-footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    border-top: 1px solid #333;
+}

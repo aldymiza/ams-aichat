@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMS PRODUCTION AI - Chatbot Cerdas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app-container">
+        <header class="app-header">
+            <div class="logo-container">
+                <div class="logo-placeholder">AMS</div>
+                <h1>AMS PRODUCTION AI</h1>
+            </div>
+            <p class="tagline">Asisten AI Cerdas Anda</p>
+        </header>
+
+        <div id="chat-container">
+            <div id="chat-box">
+                <div class="chat-message bot">
+                    <p>Halo! Saya adalah asisten AI dari AMS PRODUCTION. Ada yang bisa saya bantu?</p>
+                </div>
+            </div>
+            <div id="loading-indicator" class="hidden">
+                <div class="spinner"></div>
+            </div>
+            <form id="chat-form">
+                <input type="text" id="user-input" placeholder="Ketik pertanyaan Anda di sini..." autocomplete="off" required>
+                <button type="submit" id="send-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2 .01 7z"/></svg>
+                </button>
+            </form>
+        </div>
+
+        <footer class="app-footer">
+            <p>&copy; 2025 AMS PRODUCTION AI. Didukung oleh Teknologi Gemini.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
